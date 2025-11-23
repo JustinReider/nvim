@@ -5,4 +5,5 @@ vim.opt.shiftwidth = 4
 
 vim.opt.ignorecase = true
 
-vim.opt.clipboard:append("unnamedplus")
+vim.opt.clipboard = "unnamedplus"
+
