@@ -21,6 +21,8 @@ return {
 		"fsharp",
 		"python",
 		"html",
+		"json",
+		"sql",
 	    },
 	    auto_install = false,
 	})

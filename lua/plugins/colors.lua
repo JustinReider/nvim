@@ -8,22 +8,22 @@ local function is_ssh()
         or vim.env.SSH_TTY ~= nil
 end
 
-function LineNumberColors()
-    vim.api.nvim_set_hl(0, "LineNrAbove", { fg = '#6da9bf', bold = true })
-    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = '#9c04f9', bold = true })
-    vim.api.nvim_set_hl(0, "LineNrBelow", { fg = '#6da9bf', bold = true })
-end
-
 return {
     {
-        "folke/tokyonight.nvim",
-        config = function()
-            vim.cmd.colorscheme "tokyonight"
+        "rebelot/kanagawa.nvim",
+	lazy = false,
+	priority = 1000,
+	opts = {
+	    theme = "wave",
+	    colors = { theme = { all = { ui = { bg_gutter = "none" } } } },
+	},
+        config = function(_, opts)
+	    require("kanagawa").setup(opts)
+	    vim.cmd.colorscheme("kanagawa")
             if not is_ssh() then
                 enable_transparency()
             end
-            LineNumberColors()
-        end
+        end,
     },
     {
         "nvim-lualine/lualine.nvim",
@@ -32,7 +32,7 @@ return {
         },
         opts = {
             options = {
-                theme = 'tokyonight',
+                theme = 'kanagawa',
                 icons_enabled = true,
             }
         }
