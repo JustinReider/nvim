@@ -6,9 +6,6 @@ return {
 		'tpope/vim-fugitive',
 	},
 	{
-		'github/copilot.vim',
-	},
-	{
 		'lewis6991/gitsigns.nvim',
 	},
 	{
@@ -16,5 +13,8 @@ return {
 	},
 	{
 		'folke/trouble.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' },
+	},
+	{
+		'mfussenegger/nvim-jdtls'
 	},
 }
