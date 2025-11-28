@@ -7,7 +7,7 @@ vim.keymap.set("n", "<leader>f", function()
 	vim.lsp.buf.format({ async = true })
 end, { desc = "Format buffer" })
 
---keymaps
+--lsp keymaps
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
 		local opts = { buffer = ev.buf, silent = true }
