@@ -40,6 +40,7 @@ return {
 			map("n", "<F11>", function() dap.step_into() end)
 			map("n", "<F12>", function() dap.step_out() end)
 			map("n", "<leader>db", function() dap.toggle_breakpoint() end)
+      		map("n", "<leader>dB", function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end)
 			map("n", "<leader>du", function() dapui.toggle() end)
 		end,
 	},

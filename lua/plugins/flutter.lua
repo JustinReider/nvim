@@ -1,6 +1,7 @@
 return {
   {
     "akinsho/flutter-tools.nvim",
+	Lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim",
@@ -12,14 +13,6 @@ return {
         widget_guides = { enabled = true },
         lsp = {
           capabilities = capabilities,
-          settings = {
-            showTodos = true,
-            completeFunctionCalls = true,
-          },
-        },
-        debugger = {
-          enabled = true,
-          run_via_dap = true,
         },
       })
     end,
