@@ -15,11 +15,11 @@ return {
 				else
 					print("Copilot disabled")
 				end
-			end, { noremap = true, silent = true })
+			end, { noremap = true, silent = true, desc = 'Toggle Copilot', })
 			--accept copilot suggestion with <C-y>
 			vim.keymap.set("i", "<C-y>", 'copilot#Accept("<CR>")', {
 				silent = true, expr = true, replace_keycodes = false
 			})
 		end,
-	},
+	}
 }

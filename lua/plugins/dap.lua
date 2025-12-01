@@ -35,13 +35,13 @@ return {
 
 			-- Simple Keymaps
 			local map = vim.keymap.set
-			map("n", "<F5>", function() dap.continue() end)
-			map("n", "<F10>", function() dap.step_over() end)
-			map("n", "<F11>", function() dap.step_into() end)
-			map("n", "<F12>", function() dap.step_out() end)
-			map("n", "<leader>db", function() dap.toggle_breakpoint() end)
-      		map("n", "<leader>dB", function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end)
-			map("n", "<leader>du", function() dapui.toggle() end)
+			map("n", "<F5>", dap.continue, { desc = 'DAP continue' })
+			map("n", "<F10>", dap.step_over, { desc = 'DAP step over' })
+			map("n", "<F11>", dap.step_into, { desc = 'DAP step into' })
+			map("n", "<F12>", dap.step_out, { desc = 'DAP step out' })
+			map("n", "<leader>db", dap.toggle_breakpoint, { desc = 'DAP toggle breakpoint' })
+      		map("n", "<leader>dB", function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, { desc = 'DAP set breakpoint condition' })
+			map("n", "<leader>du", dapui.toggle, { desc = 'DAP toggle UI' })
 		end,
 	},
 }

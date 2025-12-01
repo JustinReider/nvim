@@ -24,32 +24,37 @@ return {
 				},
 				-- keymaps
 				mapping = cmp.mapping.preset.insert({
-					["<C-Space>"] = function()
-						if cmp.visible() then
-							cmp.abort()
-						else
-							cmp.complete()
-						end
-					end,
+					["<C-Space>"] = cmp.mapping.complete(),
+					["<C-e>"] = cmp.mapping.abort(),
+
+					-- Auswahl bestätigen
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
-					["<Tab>"] = function(fallback)
+
+					-- Navigation
+					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
-						elseif luasnip.expand_or_jumpable() then
-							luasnip.expand_or_jump()
+						elseif vim.snippet and vim.snippet.expandable() then
+							vim.snippet.expand()
+						elseif vim.snippet and vim.snippet.active() then
+							vim.snippet.jump(1)
 						else
 							fallback()
 						end
-					end,
-					["<S-Tab>"] = function(fallback)
+					end, { "i", "s"}),
+
+					["<S-Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_prev_item()
-						elseif luasnip.jumpable(-1) then
-							luasnip.jump(-1)
+						elseif vim.snippet and vim.snippet.active() then
+							vim.snippet.jump(-1)
 						else
 							fallback()
 						end
-					end,
+					end, { "i", "s"}),
+
+					["<C-f>"] = cmp.mapping.scroll_docs(4),
+					["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				}),
 				sources = {
 					{ name = "nvim_lsp" },
