@@ -17,4 +17,5 @@ return {
 	{
 		'mfussenegger/nvim-jdtls'
 	},
+	{ "folke/neodev.nvim", opts = {} }
 }

@@ -23,8 +23,10 @@ return {
 				"bashls", --bash
 				"jsonls", --json
 				"fsautocomplete", --fsharp
+				"kotlin_language_server", --kotlin
 			}
 
+			require("neodev").setup({})
 			require("mason").setup()
 			require("mason-lspconfig").setup({
 				ensure_installed = servers,
