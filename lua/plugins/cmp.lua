@@ -24,13 +24,12 @@ return {
 				},
 				-- keymaps
 				mapping = cmp.mapping.preset.insert({
-					["<C-Space>"] = function()
-						if cmp.visible() then
-							cmp.abort()
-						else
-							cmp.complete()
-						end
-					end,
+					['<C-l>'] = cmp.mapping.complete(),
+					['<C-e>'] = cmp.mapping.abort(),
+
+					['<C-n>'] = cmp.mapping.select_next_item(),
+					['<C-p>'] = cmp.mapping.select_prev_item(),
+
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					["<Tab>"] = function(fallback)
 						if cmp.visible() then
@@ -54,6 +53,8 @@ return {
 				sources = {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
+					{ name = "buffer" },
+					{ name = "path" },
 				},
 			})
 			-- autopairs integration

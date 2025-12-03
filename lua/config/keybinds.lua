@@ -36,6 +36,11 @@ vim.keymap.set("n", "<C-h>", "<C-W><C-H>")
 vim.keymap.set("n", "<C-j>", "<C-W><C-J>")
 vim.keymap.set("n", "<C-k>", "<C-W><C-K>")
 vim.keymap.set("n", "<C-l>", "<C-W><C-L>")
+--faster window resizing
+vim.keymap.set("n", "<C-Up>", ":resize +2<CR>")
+vim.keymap.set("n", "<C-Down>", ":resize -2<CR>")
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
 --Clear search with leader + /
 vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>")
