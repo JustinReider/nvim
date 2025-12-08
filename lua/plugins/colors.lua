@@ -14,7 +14,6 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
-			theme = "dragon",
 			colors = { theme = { all = { ui = { bg_gutter = "none" } } } },
 			transparent = true,
 			overrides = function(colors)
@@ -29,7 +28,7 @@ return {
 		},
 		config = function(_, opts)
 			require("kanagawa").setup(opts)
-			vim.cmd.colorscheme("kanagawa")
+			vim.cmd.colorscheme("kanagawa-dragon")
 			if not is_ssh() then
 				--enable_transparency()
 			end
