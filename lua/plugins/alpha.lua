@@ -32,8 +32,7 @@ return {
 				dashboard.button("r", "󰋚 Recent Files", ":Telescope oldfiles<CR>"),
 				dashboard.button("fg", "󰱼 Find Text", ":Telescope live_grep<CR>"),
 				dashboard.button("fm", "󰌌 Keybindings", ":Telescope keymaps<CR>"),
-				dashboard.button("s", "󰦛 Restore Session", ":SessionManager load_last_session<CR>"),
-				dashboard.button("ls", "󰁯 Load Session", ":SessionManager load_current_dir_session<CR>"),
+				dashboard.button("s", "󰦛 Restore Session", ":SessionManager load_current_dir_session<CR>"),
 				dashboard.button("p", "󰏖 Plugins", ":Lazy<CR>"),
 				dashboard.button("q", "󰗼 Quit", ":qa<CR>"),
 			}
