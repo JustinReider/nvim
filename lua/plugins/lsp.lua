@@ -24,6 +24,7 @@ return {
 				"jsonls", --json
 				"fsautocomplete", --fsharp
 				"kotlin_language_server", --kotlin
+				"clangd", --c/c++
 			}
 
 			require("neodev").setup({})
