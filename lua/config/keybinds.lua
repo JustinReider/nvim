@@ -4,7 +4,7 @@ vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "<leader>w", vim.cmd.w, { desc = 'Write buffer' })
 vim.keymap.set("n", "D", '"_D', { noremap = true, desc = "Delete without yank" })
 
-vim.keymap.set("n", "<leader>f", function()
+vim.keymap.set({ "n", "i" }, "<C-f>", function()
 	vim.lsp.buf.format({ async = true })
 end, { desc = "Format buffer" })
 
@@ -22,8 +22,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
 		-- Diagnostics
-		vim.keymap.set("n", "gl", vim.diagnostic.open_float, vim.tbl_extend("keep", opts, { desc = "Show diagnostic under cursor" }))
-		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, vim.tbl_extend("keep", opts, { desc = "Show previous diagnostic" }))
+		vim.keymap.set("n", "gl", vim.diagnostic.open_float,
+			vim.tbl_extend("keep", opts, { desc = "Show diagnostic under cursor" }))
+		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev,
+			vim.tbl_extend("keep", opts, { desc = "Show previous diagnostic" }))
 		vim.keymap.set("n", "]d", vim.diagnostic.goto_next, vim.tbl_extend("keep", opts, { desc = "Show next diagnostic" }))
 	end,
 })
