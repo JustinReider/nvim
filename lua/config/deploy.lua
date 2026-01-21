@@ -3,6 +3,10 @@ local projects = {
 		source = "/home/justin/Documents/Web/Team05",
 		target = "/opt/lampp/htdocs",
 	},
+	xampp = {
+		source = "C:/Users/reide/Documents/.Projects/Aufgaben/wi/web",
+		target = "C:/xampp/htdocs",
+	}
 }
 
 local function deploy(name)

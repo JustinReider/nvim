@@ -23,7 +23,7 @@ return {
 			local dashboard = require('alpha.themes.dashboard')
 
 			-- Set header
-			dashboard.section.header.val = require('ascii').art.text.neovim.dos_rebel;
+			dashboard.section.header.val = require('ascii').art.text.neovim.colossal
 
 			-- Set menu
 			dashboard.section.buttons.val = {
@@ -33,7 +33,7 @@ return {
 				dashboard.button("fg", "󰱼 Find Text", ":Telescope live_grep<CR>"),
 				dashboard.button("fm", "󰌌 Keybindings", ":Telescope keymaps<CR>"),
 				dashboard.button("s", "󰦛 Restore Session", ":SessionManager load_last_session<CR>"),
-				dashboard.button("ls", "󰁯 Load Session", ":SessionManager load_current_dir_session<CR>"),
+				dashboard.button("ls", "󰁯 Load Directory Session", ":SessionManager load_current_dir_session<CR>"),
 				dashboard.button("p", "󰏖 Plugins", ":Lazy<CR>"),
 				dashboard.button("q", "󰗼 Quit", ":qa<CR>"),
 			}
